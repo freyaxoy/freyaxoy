@@ -1,155 +1,195 @@
 
-
 <!DOCTYPE html>
-<html>
-<head>
-    <title>ChatGPT By Farisoffc</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" 
+     <meta name="description" content="Profile Zoro Store">        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" type="image/x-icon" href="https://telegra.ph/file/9bc3e2f913151180eb04e.jpg">
+    <title>Farisofc</title>
+    <script src="https://kit.fontawesome.com/6fab3a0556.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.rawgit.com/bungfrangki/efeksalju/2a7805c7/efek-salju.js" type="text/javascript">
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC nuZB EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+:root{
+        font-size: 62.5%;
+      }
+  
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+  
+      body {
+        background-image: url("https://telegra.ph/file/c5947c7ca7ab713e09799.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+      }
+  
+      main{
+        height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+  
+      .container {
+        width: 28rem;
+        padding: 1rem 2rem;
+        background-color: rgba(255, 255, 255, 0.45);
+        border-radius: 2rem;
+        border: 0.1rem solid rgba(255, 255, 255, 0.25);
+        box-shadow: 0 0 1rem 0.1rem rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(1.5rem);
+        min-width:25rem;
+        box-shadow: rgb(37 39 89 / 8%) 0px 8px 8px 0;
+        position: relative;
+        z-index: 1;
+      }
+  
+      .image {
+        width: 40%;
+        height: auto;
+        border-radius: 5rem;
+        display: block;
+        margin: 1rem auto;
+      }
+  
+      hr{
+        border-color: #673146;
+      }
+  
+      h1,
+      .occupation {
+        text-align: center;
+      }
+  
+      h1 {
+        font-family: Muli, sans-serif;
+        font-weight:700;
+        font-size: 2.3rem;
+      }
+  
+      .occupation {
+        margin-bottom: 0.5rem;
+        font-size: 1.5rem;
+        font-family: "Space Mono", monospace;
+      }
+  
+      .link-boxes {
+        margin: 2rem 1rem;
+        font-family: Muli, sans-serif;
+        font-weight:700;
+        font-size: 1.4em;
+        text-transform: capitalize;
+      }
+  
+      .link-boxes a {
+        text-decoration: none;
+        display: block;
+        color: #27213b;
+        border: 0.1rem solid  #673146;
+        text-align: center;
+        margin: 0.7rem;
+        border-radius: 0.5rem;
+        padding: 0.3rem;
+        transition: all 200ms ease-in-out;
+        box-shadow: rgb(37 39 89 / 8%) 0px 8px 8px 0;
+      }
+  
+      .link-boxes a:hover {
+        border: 0.1rem solid #27213b;
+        background-color:#f8923b;
+        cursor: pointer;;
+      }
+  
+      .location {
+        text-align: center;
+        margin: 0.7rem;
+        font-size: 1.2rem;
+        font-family: "Space Mono", monospace;
+      }
+      .container {
+    
+  }
+  
+  
+     #effetsalju {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0; /* Tetapkan z-index untuk efek salju */
+      }
+  
+      @media only screen and (min-width:992px){
+        .image{
+          width:40%;
         }
-
-        #banner {
-            background-color: #007BFF;
-            color: white;
-            padding: 5px;
-            text-align: center;
-            font-size: 20px;
+        h1{
+          font-size: 2.4rem;
         }
-
-        #chat-container {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            align-items: center;
-            background-color: #f5f5f5;
-            margin: 20px;
-        }
-
-        #chatbox {
-            width: 100%;
-            max-width: 600px;
-            max-height: 400px;
-            overflow-y: auto;
-            background-color: white;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .user-message {
-            text-align: right;
-            color: #3d3d3d;
-            display: flex;
-            align-items: center;
-            margin: 10px;
-        }
-
-        #sendButton {
-            width: 70px;
-            height: 40px;
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            cursor: pointer;
-            border-radius: 20px;
-            font-size: 18px;
-        }
-
-        .user-logo {
-            width: 30px;
-            height: 30px;
-            margin-left: 10px;
-        }
-
-        .bot-message {
-            text-align: left;
-            color: #3d3d3d;
-            display: flex;
-            align-items: flex-end;
-            margin: 10px;
-        }
-
-        .message {
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            word-wrap: break-word;
-            white-space: pre-line;
-        }
-
-        .message.bot-message {
-            background-color: #f0f0f0;
-        }
-
-        .bot-reply {
-            display: flex;
-            align-items: center;
-        }
-
-        .chatbot-logo {
-            width: 30px;
-            height: 30px;
-            margin-right: 10px;
-        }
-
-        #userLogo {
-            width: 30px;
-            height: 30px;
-            margin-right: 10px;
-        }
-
-        #questionTypeBox {
-            flex: 1;
-            padding: 10px;
-            border: none;
-            outline: none;
-            font-size: 16px;
-            border-radius: 20px;
-        }
-
-        .user-logo {
-            width: 30px;
-            height: 30px;
-            margin-left: 10px;
-        }
-
-        #inputContainer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid #ccc;
-            padding: 10px;
-            width: 100%;
-            background-color: white;
-            margin-top: 20px;
-        }
+      }
+        .card[data-state="#experience"] {
+      height: 550px;
+    }
     </style>
-</head>
-<body>
-    <div id="banner">
-        <h1>CHATGPT BY FARIS</h1>
-    </div>
-    <div id="chat-container">
-        <div id="chatbox"></div>
-        <div id="inputContainer">
-            <img id="userLogo" src="http://telegra.ph/file/be3864b1ac58b1231b6d2.jpg" alt="User Logo">
-            <input type="text" id="questionTypeBox" placeholder="Type your question...">
-            <button id="sendButton">Send</button>
-        </div>
-    </div>
-
     <script>
-        const chatbox = document.getElementById('chatbox');
-        const questionTypeBox = document.getElementById('questionTypeBox');
+function exec() {
+        var audio = document.getElementById('audio');
+        audio.play();
+      }
+    </script>
+  </head>
+<link href='https://farisstore.me' rel='canonical' />
+  <body onload="exec()">
+    <audio id="audio" autoplay>
+      <source src="./img/duvet.mp3" type="audio/mpeg">
+    </audio>
+    <div id="effetsalju">
+    </div>
+    <main>
+      <div class="container shadow">
+        <img class="image" src="https://telegra.ph/file/7fe25269226329300584e.png" alt="Faris Picture" loading="lazy">
+        <h1>Zoro Store</h1>
+         <svg style='margin-bottom:-2px' fill="none" height="16" viewBox="0 0 16 16" width="16">
+        <h1 class="occupation">Bruh</h1>
+       <hr/>
+        <div class="link-boxes">
+          <a class="shadow" title="View Zoro Store" href="https://tiktok.com/farishayya" target="_blank">
+            <i class="fa-brands fa-tiktok" aria-hidden="true"></i>Tiktok</a>
+         
+          <a class="shadow" title="View Faris GitHub profile" href="https://github.com/farisofc" target="_blank">
+            <i class="fa fa-github icon" aria-hidden="true"></i>GitHub</a>
+          <a class="shadow" title="View faris Telegram profile" href="https://t.me/farisofc" target="_blank">
+            <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>Telegram</a>
+          <a class="shadow" title="Send a mail to Farisofc" href="email:farislatief1@gmail.com" target="_blank">
+            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>E-mail</a>
+          <a class="shadow" title="Send a message to Farisofc" href="https://wa.me/message/PJY7VKR44X2AC1" target="_blank">
+            <i class="fa fa-whatsapp icon" aria-hidden="true"></i>WhatsApp</a>
+        </div>
+        <hr/>
+        <p class="location">
+          <i class="fa fa-map-marker icon" aria-hidden="true"></i>Jawa Barat Bogor,Indonesia</p>
+          
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+
+</html>		
+
+		
